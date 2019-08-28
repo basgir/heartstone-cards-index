@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<div class="row">
+
+{% if card %}    
+    <div class="col-lg-4 col-sm-12">
+            <div class="card">
+              <div class="card-header">
+                  {{card.faction}}
+              </div>
+              <!-- <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
+              </div> -->
+              <div class="card-body">
+                <img src="{{card.img_url}}" alt="">        
+                <h4 class='display-5'>{{serie.date}}-{{training.date|date:'d-m-Y H:i'}}</h4>
+                <p class="lead">{{card.name}}</p>
+                <br>
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class='d-inline text-right'>ONLY </h5>
+                    <h5 class='d-inline text-right text-success font-weight-bold'>Exo 1</h5>
+                    {{card.attack}}
+                    {{card.cost}}
+                    {{card.health}}
+                    <h5 class='d-inline'> / </h5>
+                  </div>
+                  <div class="col-4 text-center">
+                    <a href="/courses/" class="btn btn-success text-uppercase">ABOUT</a>
+                  </div>
+                </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <h4>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              <div class="card-footer">
+                {{card.created_at|date:'d-m-Y'}}
+              </div>
+            </div>
+            <br>
+          </div>
+{% else %}
+    <p>No card with this id are available.</p>
+{% endif %}
+  </div>
+</div>
+{% endblock %}
+training
